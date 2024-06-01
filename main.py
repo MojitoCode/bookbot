@@ -10,14 +10,18 @@ def main():
 def count_letters():
     book_chars = {}
     book_path = "./books/frankenstein.txt" 
+
     with open(book_path) as f:
         for i in f:
+            #convert the line to lower
             lower_string = i.lower()
-            if lower_string in book_chars:
-                book_chars[lower_string] +=1
-            else:
-                book_chars[lower_string] = 1
-    print(lower_string)
+            for l in lower_string:
+                if l in book_chars:
+                    book_chars[l] +=1
+                else:
+                    book_chars[l] = 1
+    return book_chars
 
 main()
-count_letters()
+result = count_letters()
+print(result)
