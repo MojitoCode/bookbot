@@ -20,7 +20,7 @@ def count_letters():
     for char in book:
         if char.isalpha():
             #convert the line to lower
-            lower_string = char.lower()
+            char = char.lower()
             if char in book_chars:
                 book_chars[char] +=1
             else:
@@ -29,14 +29,16 @@ def count_letters():
     char_list = [{"character": char, "occurrence": number} for char, number in book_chars.items()]
     char_list.sort(reverse=True, key=sort_dict)
 
-    return char_list, book_path
+    return char_list
 
 def print_report():
-    char_list, book_path = count_letters()
-
+    #print the starting message
     print(f"--- Begin Report of {book_title} ---")
+    #display the number of total words in the book
     main()
-
+    #get letter count
+    char_list = count_letters()
+    #display the number of occurrences of each letter, in descending order
     for i in char_list:
         print(f"The {i['character']} character was found {i['occurrence']}")
     print(f"--- End Report ---")
