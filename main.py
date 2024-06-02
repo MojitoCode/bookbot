@@ -40,7 +40,7 @@ def print_report():
     char_list = count_letters()
     #display the number of occurrences of each letter, in descending order
     for i in char_list:
-        print(f"The {i['character']} character was found {i['occurrence']}")
+        print(f"The {i['character']} character was found {i['occurrence']} times")
     print(f"--- End Report ---")
 
 print_report()
